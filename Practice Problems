@@ -1,0 +1,220 @@
+(1) The length and height of a rectangle and radius of a circle are input through the keyboard. Write a program to find the area & perimeter of the rectangle and the area & circumference of the circle.
+
+#include<stdio.h>
+
+int main(){
+
+    int length, height, radius;
+
+    printf("Enter length:");
+    scanf("%d", &length);
+    printf("Enter height:");
+    scanf("%d", &height);
+    printf("Enter radius:");
+    scanf("%d", &radius);
+
+    printf("Area of rectangle:%d\n", length*height);
+    printf("Perimeter of rectangle:%d\n", 2*(length + height));
+    printf("Area of circle:%.2f\n", 3.14*(float)radius*(float)radius);
+    printf("Circumference of circle:%.2f", 2*3.14*(float)radius);
+
+return 0;
+}
+
+(2) Rahim’s basic salary is input through the keyboard. His House rent allowance is 30% of basic salary and medical allowance is 5% of basic salary. He gets extra 1000 tk as technical allowance. Write a program to calculate his gross salary and print the result.
+
+#include<stdio.h>
+
+int main(){
+
+    int basic,houserent,medical,technical;
+
+    printf("Basic Salary:");
+    scanf("%d", &basic);
+
+    houserent= (float)basic*(30/100);
+    medical= (float)basic*(5/100);
+    technical= 1000;
+
+    printf("Gross Salary:%d", basic+houserent+technical+medical);
+
+return 0;
+}
+
+(3) The distance between Dhaka and Rajshahi (in km) is input through keyboard. Write a program to convert and print this distance in meters, feet, inches and centimeters.
+
+#include<stdio.h>
+
+int main(){
+
+    int distance;
+    float meter, feet, inches, centimeter;
+
+    printf("Enter distance(km) between Dhaka and Rajshahi:");
+    scanf("%d", &distance);
+
+    meter = (float)distance*1000;
+    feet = (float)distance*3280.84;
+    inches = (float)distance*39370.1;
+    centimeter = (float)distance*100000;
+
+    printf("Meter:%.2f\nFeet:%.2f\nInches:%.2f\nCentimeters:%.2f", meter,feet,inches,centimeter);
+
+return 0;
+}
+
+(4)  Temperature of a city in Fahrenheit degrees is input through the keyboard. Write a program to convert this temperature into centigrade degrees.
+
+#include<stdio.h>
+
+int main(){
+
+    int F;
+    float C;
+
+    printf("Enter the temperature of a city in Fahrenheit:");
+    scanf("%d", &F);
+
+    C= (((float)F-32)/9)*5;
+
+    printf("The temperature in Celcius scale is:%.2f", C);
+
+return 0;
+}
+
+(5) Two numbers are input through the keyboard into two locations A and B. Write a program to interchange the contents of A and B.
+
+#include<stdio.h>
+
+int main(){
+
+    int a,b,temp;
+
+    printf("Enter 2 numbers:");
+    scanf("%d%d", &a,&b);
+
+    printf("Numbers before swapping:\na=%d\nb=%d\n", a, b);
+
+    temp= a;
+    a= b;
+    b= temp;
+
+    printf("Numbers after swapping:\na=%d\nb=%d", a, b);
+
+return 0;
+}
+
+(6)  If marks obtained by a student in 5 different subjects are input from keyboard, find out the aggregate marks and percentage marks obtained by the student.
+
+#include<stdio.h>
+
+int main(){
+
+    double mark[5];
+    double total= 0.0;
+
+    for(int i=0; i<5; i++){
+        printf("Enter marks for subject%d:", i+1);
+        scanf("%lf", &mark[i]);
+        total = total + mark[i];
+    }
+
+    printf("Aggregate marks:%.2lf", total);
+    printf("Percentage:%.2lf", (total/500)*100);
+
+return 0;
+}
+
+(7)  If a 5 digit number is input through the keyboard, write a program to calculate and print the sum of its digits. [Hint: Use the modulus operator ‘%’
+
+#include<stdio.h>
+
+int main(){
+
+    int number,digit;
+    int sum = 0;
+
+    printf("Enter a 5 digit number:");
+    scanf("%d", &number);
+
+    for( ; number!=0; number=number/10){
+        digit = number%10;
+        sum = sum + digit;
+    }
+
+    printf("The sum of the digits:%d", sum);
+
+return 0;
+}
+
+(8) If a 5 digit number is input through the keyboard, write a program to reverse the number
+
+#include<stdio.h>
+
+int main(){
+
+    int number,digit;
+    int reverse = 0;
+
+    printf("Enter a 5 digit number:");
+    scanf("%d", &number);
+
+    for( ; number!=0; number=number/10){
+        digit = number%10;
+        reverse = reverse*10+digit;
+    }
+
+    printf("The reversed number:%d", reverse);
+
+return 0;
+}
+
+(9)  If a 4 digit number is input through the keyboard, write a program to obtain the sum of the first and last digit of this number.
+
+#include <stdio.h>
+
+int main() {
+    int number, first, last;
+
+    printf("Enter a 4-digit number: ");
+    scanf("%d", &number);
+
+    last = number % 10;
+
+    first = number / 1000;
+
+    printf("Sum of the first and last digit: %d\n", first + last);
+
+    return 0;
+}
+
+(10) Determine the largest among three numbers.
+
+#include<stdio.h>
+
+int main(){
+
+    int a,b,c;
+
+    printf("Enter 3 numbers:");
+    scanf("%d%d%d", &a,&b,&c);
+
+    if(a>=b){
+        if(a>=c){
+            printf("%d is the largest", a);
+        }
+        else{
+            printf("%d is the largest", c);
+        }
+    }
+    else if(b>=c){
+        printf("%d is the largest", b);
+    }
+    else{
+        printf("%d is the largest", c);
+    }
+
+return 0;
+}
+
+(11) 
