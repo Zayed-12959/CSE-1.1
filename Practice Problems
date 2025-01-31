@@ -217,4 +217,187 @@ int main(){
 return 0;
 }
 
-(11) 
+(11)  Take a year as input and determine whether it is a leap year . [Hint: Check the divisibility by 4, 100 and 400
+
+#include<stdio.h>
+
+int main(){
+
+    int year;
+
+    printf("Enter a year:");
+    scanf("%d", &year);
+
+    if(year%400==0 || (year%4==0 && year%100!=0)){
+        printf("%d is a leap year.\n", year);
+    }
+    else{
+        printf("%d is not a leap year.");
+    }
+
+return 0;
+}
+
+(12)  If cost price and selling price of an item is input through the keyboard, write a program to determine whether the seller has made profit or incurred loss. Also determine how much profit he made or loss he incurred.
+
+#include<stdio.h>
+
+int main(){
+
+    int cost, sell;
+
+    printf("Enter Cost:");
+    scanf("%d", &cost);
+
+    printf("Enter Selling price:");
+    scanf("%d", &sell);
+
+    if(cost>sell){
+        printf("Loss:%d", cost-sell);
+    }
+    else if(sell>cost){
+        printf("Profit:%d", sell-cost);
+    }
+    else{
+        printf("Np profit.");
+    }
+
+return 0;
+}
+
+(13)  Any integer is input through keyboard. Write a program to find out whether it is an odd number or even number .
+
+#include<stdio.h>
+
+int main(){
+
+    int a;
+
+    printf("Enter an integer:");
+    scanf("%d", &a);
+
+    if(a%2==0){
+        printf("Even");
+    }
+    else if(a%2!=0){
+        printf("Odd");
+    }
+    else{
+        printf("Invalid");
+    }
+
+return 0;
+}
+
+(14) 
+AUST grading policy is : 
+
+(i) 80 % marks or above is A+ 
+(ii) 75% to 79% marks is A 
+(iii) 70% to 74% marks is A- 
+(iv) 65% to 69% marks is B+ 
+(v) 60% to 64% marks is B 
+(vi) 55% to 59% marks is B- 
+(vii) 50% to 54% marks is C+ 
+(viii) 45% to 49% marks is C 
+(ix) 40% to 44% marks is D 
+(x) Below 40% is F 
+
+Write a program which will take an input from user and calculate the grade of a student according to AUST grading policy based on that input
+
+#include<stdio.h>
+
+int main(){
+
+    int marks;
+
+    printf("Enter marks:");
+    scanf("%d", &marks);
+
+    if(marks<40){
+        printf("Failed");
+    }
+    else if(marks>=40 && marks<=44){
+        printf("D");
+    }
+    else if(marks>=45 && marks<=49){
+        printf("C");
+    }
+    else if(marks>=50 && marks<=54){
+        printf("C+");
+    }
+    else if(marks>=55 && marks<=59){
+        printf("B-");
+    }
+    else if(marks>=60 && marks<=64){
+        printf("B");
+    }
+    else if(marks>=65 && marks<=69){
+        printf("B+");
+    }
+    else if(marks>=70 && marks<=74){
+        printf("A-");
+    }
+    else if(marks>=75 && marks<=79){
+        printf("A");
+    }
+    else if(marks>=80 && marks<=100){
+        printf("A+");
+    }
+
+return 0;
+}
+
+(15)   
+
+A certain grade of steel is graded according to the following conditions: 
+
+(i) Hardness must be greater than 60
+(ii) Carbon content must be less than 0.7 
+(iii) Tensile strength must be greater than 5000 
+
+The grades are as follows: 
+Grade is 10 if all three conditions are met 
+Grade is 9 if condition (i) and (ii) are met 
+Grade is 8 if condition (ii) and (iii) are met 
+Grade is 7 if condition (i) and (iii) are met 
+Grade is 6 if only one condition is met 
+Grade is 5 if none of the conditions are met 
+
+Write a program which will require the user to give values of hardness, carbon content and tensile strength of the steel under consideration and output the grade of the steel.
+
+#include<stdio.h>
+
+int main(){
+
+    int hardness,tensile;
+    float carbon;
+
+    printf("Enter Hardness:");
+    scanf("%d", &hardness);
+    printf("Enter carbon content:");
+    scanf("%f", &carbon);
+    printf("Enter tensile strength:");
+    scanf("%d", &tensile);
+
+    if(hardness>60 && carbon<0.7 && tensile>5000){
+        printf("Grade 10");
+    }
+    else if(hardness>60 && carbon<0.7){
+        printf("Grade 9");
+    }
+    else if(carbon<0.7 && tensile>5000){
+        printf("Grade 8");
+    }
+    else if(hardness>60 && tensile>5000){
+        printf("Grade 7");
+    }
+    else if(hardness>60 || carbon<0.7 || tensile>5000){
+        printf("Grade 6");
+    }
+    else{
+        printf("Grade 5");
+    }
+
+return 0;
+}
