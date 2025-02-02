@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+
+    int end;
+    printf("Enter an end number:");
+    scanf("%d", &end);
+
+    for(int i=1; i<=end; i++){
+            int digit;
+            int sum = 0;
+            int original = i;
+        for(int j=i; j!=0; j/=10){
+            digit = j%10;
+            sum = sum + pow(digit,3);
+        }
+        if(sum==original){
+            printf("%d is an armstrong number", original);
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
