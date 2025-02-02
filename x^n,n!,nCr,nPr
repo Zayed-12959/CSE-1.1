@@ -1,0 +1,58 @@
+ x and n are input through keyboard. Write a program to compute x n , n! , n C r , n P r.
+
+#include<stdio.h>
+
+long long power(int base, int exp){
+    long long result = 1;
+
+    for(int i=1; i<=exp; i++){
+        result= result*base;
+    }
+    return result;
+}
+
+long long factorial(int num){
+    long long fact=1;
+
+    for(int i=1; i<=num; i++){
+        fact = fact*i;
+    }
+    return fact;
+}
+
+int main(){
+
+    int x, n, r;
+    int xn, nfact, nCr, nPr;
+
+    printf("x:");
+    scanf("%d", &x);
+    printf("n:");
+    scanf("%d", &n);
+    printf("r:");
+    scanf("%d", &r);
+
+    xn= power(x,n);
+    printf("Power x^n= %lld\n", xn);
+
+    nfact= factorial(n);
+    printf("Factorial n!= %lld\n", nfact);
+
+    if(r<=n){
+        nCr= factorial(n)/(factorial(r)*(factorial(n-r)));
+    }
+    else{
+        nCr = 0;
+    }
+    printf("nCr = %lld\n", nCr );
+
+    if(r<=n){
+        nPr= factorial(n)/factorial(n-r);
+    }
+    else{
+        nPr = 0;
+    }
+    printf("nPr = %lld\n", nPr);
+
+return 0;
+}
