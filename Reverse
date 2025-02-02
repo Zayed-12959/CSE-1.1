@@ -1,0 +1,21 @@
+(8) If a 5 digit number is input through the keyboard, write a program to reverse the number
+
+#include<stdio.h>
+
+int main(){
+
+    int number,digit;
+    int reverse = 0;
+
+    printf("Enter a 5 digit number:");
+    scanf("%d", &number);
+
+    for( ; number!=0; number=number/10){
+        digit = number%10;
+        reverse = reverse*10+digit;
+    }
+
+    printf("The reversed number:%d", reverse);
+
+return 0;
+}
