@@ -1,0 +1,21 @@
+(3) The distance between Dhaka and Rajshahi (in km) is input through keyboard. Write a program to convert and print this distance in meters, feet, inches and centimeters.
+
+#include<stdio.h>
+
+int main(){
+
+    int distance;
+    float meter, feet, inches, centimeter;
+
+    printf("Enter distance(km) between Dhaka and Rajshahi:");
+    scanf("%d", &distance);
+
+    meter = (float)distance*1000;
+    feet = (float)distance*3280.84;
+    inches = (float)distance*39370.1;
+    centimeter = (float)distance*100000;
+
+    printf("Meter:%.2f\nFeet:%.2f\nInches:%.2f\nCentimeters:%.2f", meter,feet,inches,centimeter);
+
+return 0;
+}
