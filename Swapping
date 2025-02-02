@@ -1,0 +1,21 @@
+(5) Two numbers are input through the keyboard into two locations A and B. Write a program to interchange the contents of A and B.
+
+#include<stdio.h>
+
+int main(){
+
+    int a,b,temp;
+
+    printf("Enter 2 numbers:");
+    scanf("%d%d", &a,&b);
+
+    printf("Numbers before swapping:\na=%d\nb=%d\n", a, b);
+
+    temp= a;
+    a= b;
+    b= temp;
+
+    printf("Numbers after swapping:\na=%d\nb=%d", a, b);
+
+return 0;
+}
