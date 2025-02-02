@@ -1,0 +1,25 @@
+Write a program to find out first n perfect number where n is the input from user.
+(A perfect number is a positive integer that is equal to the sum of its proper divisors (excluding itself).)
+
+#include <stdio.h>
+
+int main(){
+
+    int i, j, end, sum;
+    printf("Enter upper limit: ");
+    scanf("%d", &end);
+
+    for(i=1; i<=end; i++){
+
+        sum = 0;
+        for(j=1; j<i; j++){
+            if(i % j == 0){
+            sum += j;
+            }
+        }
+        if(sum == i){
+            printf("%d, ", i);
+        }
+    }
+return 0;
+}
