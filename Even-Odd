@@ -1,0 +1,23 @@
+(13)  Any integer is input through keyboard. Write a program to find out whether it is an odd number or even number .
+
+#include<stdio.h>
+
+int main(){
+
+    int a;
+
+    printf("Enter an integer:");
+    scanf("%d", &a);
+
+    if(a%2==0){
+        printf("Even");
+    }
+    else if(a%2!=0){
+        printf("Odd");
+    }
+    else{
+        printf("Invalid");
+    }
+
+return 0;
+}
