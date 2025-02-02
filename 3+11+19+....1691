@@ -3,9 +3,12 @@
 
 int main(){
 
-    int sum =0;
+    int sum = 0;
+    int a = 3;
+    int nth = 1691;
+    int d = 8;
 
-    for(int i=3; i<=1691; i+=8){
+    for(int i=a; i<=nth; i+=d){
         sum += i;
     }
     printf("%d", sum);
