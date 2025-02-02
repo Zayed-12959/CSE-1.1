@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+
+    int sum=0;
+    int a= 7;
+    int n= 100;
+    int d= 13;
+    int nth = a+(n-1)*d;
+
+    for(int i=a; i<=nth ; i+=d){
+        sum += i;
+    }
+    printf("SUM:%d", sum);
+
+return 0;
+}
