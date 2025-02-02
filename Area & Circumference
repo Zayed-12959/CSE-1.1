@@ -1,0 +1,22 @@
+(1) The length and height of a rectangle and radius of a circle are input through the keyboard. Write a program to find the area & perimeter of the rectangle and the area & circumference of the circle.
+
+#include<stdio.h>
+
+int main(){
+
+    int length, height, radius;
+
+    printf("Enter length:");
+    scanf("%d", &length);
+    printf("Enter height:");
+    scanf("%d", &height);
+    printf("Enter radius:");
+    scanf("%d", &radius);
+
+    printf("Area of rectangle:%d\n", length*height);
+    printf("Perimeter of rectangle:%d\n", 2*(length + height));
+    printf("Area of circle:%.2f\n", 3.14*(float)radius*(float)radius);
+    printf("Circumference of circle:%.2f", 2*3.14*(float)radius);
+
+return 0;
+}
