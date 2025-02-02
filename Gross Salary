@@ -1,0 +1,19 @@
+(2) Rahim’s basic salary is input through the keyboard. His House rent allowance is 30% of basic salary and medical allowance is 5% of basic salary. He gets extra 1000 tk as technical allowance. Write a program to calculate his gross salary and print the result.
+
+#include<stdio.h>
+
+int main(){
+
+    int basic,houserent,medical,technical;
+
+    printf("Basic Salary:");
+    scanf("%d", &basic);
+
+    houserent= (float)basic*(30/100);
+    medical= (float)basic*(5/100);
+    technical= 1000;
+
+    printf("Gross Salary:%d", basic+houserent+technical+medical);
+
+return 0;
+}
