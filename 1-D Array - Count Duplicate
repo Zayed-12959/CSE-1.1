@@ -6,7 +6,8 @@ element - 0 : 5
 element - 1 : 1
 element - 2 : 1
 Expected Output :
-Total number of duplicate elements found in the array is : 2
+Total number of duplicate elements found in the array is : 1
+
 
 #include<stdio.h>
 
@@ -16,6 +17,7 @@ int main(){
     int i;
     int j;
     int count = 0;
+
 
     printf("Input number of elements to be stored in the array:");
     scanf("%d", &n);
@@ -30,12 +32,15 @@ int main(){
     //Counting duplicate elements
     for(i=0; i<n; i++){
         for(j=i+1; j<n; j++){
-            count++;
-            break;
+            if(arr[i]==arr[j]){
+                    count++;
+                    break;
+            }
         }
     }
 
     printf("Total number of duplicate elements:%d", count);
+
 
 return 0;
 }
