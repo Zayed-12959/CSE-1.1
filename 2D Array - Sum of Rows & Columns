@@ -18,9 +18,19 @@ int main(){
         }
     }
 
+    printf("Sum of elements of rows:\n");
     for(int row=0; row<n1; row++){
             int sum = 0;
         for(int col=0; col<n2; col++){
+            sum = sum + arr[row][col];
+        }
+        printf("%d\n", sum);
+    }
+
+    printf("Sum of elements of colomns:\n");
+    for(int col=0; col<n2; col++){
+        int sum = 0;
+        for(int row=0; row<n2; row++){
             sum = sum + arr[row][col];
         }
         printf("%d\n", sum);
