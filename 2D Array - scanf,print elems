@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main(){
+
+    int n1,n2;
+
+    printf("Enter the number of elements of row:");
+    scanf("%d", &n1);
+    printf("Enter the number of elements in column:");
+    scanf("%d", &n2);
+
+    int arr[n1][n2];
+
+    for(int row=0; row<n1; row++){
+        for(int col=0; col<n2; col++){
+            printf("Element[%d-%d]:", row, col);
+            scanf("%d", &arr[row][col]);
+        }
+    }
+
+    for(int row=0; row<n1; row++){
+        for(int col=0; col<n2; col++){
+            printf("%d  ", arr[row][col]);
+        }
+        printf("\n");
+    }
+
+return 0;
+}
