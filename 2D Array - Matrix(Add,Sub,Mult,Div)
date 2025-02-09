@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main(){
+
+    int n;
+    printf("Enter the size of arrays:");
+    scanf("%d", &n);
+
+    int arr1[n][n], arr2[n][n];
+    int result[n][n], result2[n][n], result3[n][n];
+    float result4[n][n];
+
+
+    printf("Enter elements of array 1:\n");
+    for(int row=0; row<n; row++){
+        for(int col=0; col<n; col++){
+            printf("Element[%d,%d]=", row, col);
+            scanf("%d", &arr1[row][col]);
+        }
+    }
+
+    printf("Enter elements of array 2:\n");
+    for(int row=0; row<n; row++){
+        for(int col=0; col<n; col++){
+            printf("Element[%d,%d]=", row, col);
+            scanf("%d", &arr2[row][col]);
+        }
+    }
+
+    printf("Addition:\n");
+    for(int row=0; row<n; row++){
+        for(int col=0; col<n; col++){
+            result[row][col] = arr1[row][col] + arr2[row][col];
+            printf("%d  ", result[row][col]);
+        }
+        printf("\n");
+    }
+
+    printf("Substraction:\n");
+    for(int row=0; row<n; row++){
+        for(int col=0; col<n; col++){
+            result2[row][col] = arr1[row][col] - arr2[row][col];
+            printf("%d  ", result2[row][col]);
+        }
+        printf("\n");
+    }
+
+    printf("Multiplication:\n");
+    for(int row=0; row<n; row++){
+        for(int col=0; col<n; col++){
+            result3[row][col] = arr1[row][col] * arr2[row][col];
+            printf("%d  ", result3[row][col]);
+        }
+        printf("\n");
+    }
+
+    printf("Division:\n");
+    for(int row=0; row<n; row++){
+        for(int col=0; col<n; col++){
+            result4[row][col] = (float)arr1[row][col] / (float)arr2[row][col];
+            printf("%.2f  ", result4[row][col]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
