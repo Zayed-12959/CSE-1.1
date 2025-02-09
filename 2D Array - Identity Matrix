@@ -1,0 +1,78 @@
+Write a program in C to check whether a given matrix is an identity matrix.
+Test Data :
+Input number of Rows for the matrix :3
+Input number of Columns for the matrix :3
+Input elements in the first matrix :
+element - [0],[0] : 1
+element - [0],[1] : 0
+element - [0],[2] : 0
+element - [1],[0] : 0
+element - [1],[1] : 1
+element - [1],[2] : 0
+element - [2],[0] : 0
+element - [2],[1] : 0
+element - [2],[2] : 1
+Expected Output :
+The matrix is :
+1 0 0
+0 1 0
+0 0 1
+The matrix is an identity matrix.
+
+
+#include <stdio.h>
+
+int main() {
+    int rows, cols, isIdentity = 1;
+
+    printf("Input number of Rows for the matrix: ");
+    scanf("%d", &rows);
+    printf("Input number of Columns for the matrix: ");
+    scanf("%d", &cols);
+
+    // Check for square matrix
+    if (rows != cols) {
+        printf("The matrix is not a square matrix and therefore cannot be an identity matrix.\n");
+        return 0;
+    }
+
+    int matrix[rows][cols];
+
+    // Input elements for the matrix
+    printf("Input elements in the matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("element - [%d],[%d] : ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Display the matrix
+    printf("\nThe matrix is:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Check for identity matrix
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if ((i == j && matrix[i][j] != 1) || (i != j && matrix[i][j] != 0)) {
+                isIdentity = 0;
+                break;
+            }
+        }
+        if (!isIdentity) break;
+    }
+
+    // Display result
+    if (isIdentity) {
+        printf("\nThe matrix is an identity matrix.\n");
+    } else {
+        printf("\nThe matrix is not an identity matrix.\n");
+    }
+
+    return 0;
+}
