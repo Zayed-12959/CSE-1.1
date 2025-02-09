@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+
+    int row_range, col_range;
+    printf("Enter row range:");
+    scanf("%d", &row_range);
+    printf("Enter column range:");
+    scanf("%d", &col_range);
+
+    int arr[row_range][col_range], transpose[col_range][row_range];
+
+    for(int row=0; row<row_range; row++){
+        for(int col=0; col<col_range; col++){
+            printf("Element[%d,%d]=", row, col);
+            scanf("%d", &arr[row][col]);
+            transpose[col][row] = arr[row][col];
+        }
+    }
+
+    printf("Given array:\n");
+    for(int row=0; row<row_range; row++){
+        for(int col=0; col<col_range; col++){
+            printf("%d  ", arr[row][col]);
+        }
+        printf("\n");
+    }
+
+    printf("Transpose array:\n");
+    for(int col=0; col<col_range; col++){
+        for(int row=0; row<row_range; row++){
+            printf("%d  ", transpose[col][row]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
