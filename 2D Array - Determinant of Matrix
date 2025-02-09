@@ -1,0 +1,54 @@
+Write a program in C to calculate the determinant of a 3 x 3 matrix.
+Test Data :
+Input elements in the first matrix :
+element - [0],[0] : 1
+element - [0],[1] : 0
+element - [0],[2] : -1
+element - [1],[0] : 0
+element - [1],[1] : 0
+element - [1],[2] : 1
+element - [2],[0] : -1
+element - [2],[1] : -1
+element - [2],[2] : 0
+Expected Output :
+The matrix is :
+1 0 -1
+0 0 1
+-1 -1 0
+
+The Determinant of the matrix is: 1
+
+#include <stdio.h>
+
+int main() {
+    int matrix[3][3];
+    int determinant;
+
+    printf("Input elements in the matrix:\n");
+
+    // Reading the matrix elements
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("element - [%d],[%d] : ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Displaying the matrix
+    printf("\nThe matrix is:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Calculating the determinant
+    determinant = matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1])
+                - matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0])
+                + matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]);
+
+    printf("\nThe Determinant of the matrix is: %d\n", determinant);
+
+    return 0;
+}
