@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<math.h>
+
+void calculate(int n, int arr[], int *sum, float *avg, float *std_dev){
+
+    *sum = 0;
+    for(int i=0; i<n; i++){
+        *sum += arr[i];
+    }
+
+    *avg = (float)*sum/n;
+
+    float varience = 0.0;
+    for(int i=0; i<n; i++){
+        varience += pow((arr[i]-*avg), 2);
+    }
+    *std_dev = sqrt(varience/n);
+
+}
+
+int main(){
+
+    int n;
+    printf("Enter range:");
+    scanf("%d", &n);
+
+    int numbers[n];
+    int sum;
+    float avg, std_dev;
+
+    printf("Enter 5 integers:");
+    for(int i=0; i<n; i++){
+        scanf("%d", &numbers[i]);
+    }
+
+    calculate(n, numbers, &sum, &avg, &std_dev);
+
+    printf("Sum=%d", sum);
+    printf("Average=%.2f", avg);
+    printf("Standard Deviation=%.2f", std_dev);
+
+return 0;
+}
