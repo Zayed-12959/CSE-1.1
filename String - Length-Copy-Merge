@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+char str[20] = "Welcome";
+
+//Length of a string
+int count = 0;
+
+for(int i=0; str[i]!='\0'; i++){
+    count ++;
+}
+
+printf("%d\n", count);
+printf("%d\n", strlen(str));    //IF #include<string.h>
+
+//Copy two strings
+char copy[20];
+int i;
+for(i=0; str[i]!=0; i++){
+    copy[i] = str[i];
+}
+copy[i] = '\0';
+
+printf("%s\n", copy);
+printf("%s\n", strcpy(copy, str));  //IF #include<string.h>
+
+//Merge two strings
+char str1[50] = "Welcome";
+char str2[] = " Here";
+
+for(i=0; str1[i]!='\0'; i++){
+
+}
+int j;
+for(j=0; str2[j]!='\0'; j++){
+    str1[i] = str2[j];
+    i++;
+}
+str1[i] = '\0';
+
+printf("%s\n", str1);
+//IF #include<string.h> printf("%s", strcat(str1,str2));
+
+return 0;
+}
