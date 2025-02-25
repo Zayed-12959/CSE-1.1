@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+    //scan a string
+    char str1[30];
+
+    printf("Enter a string:");
+
+    char goda = gets(str1);
+    printf("%s\n", str1);
+
+    //strlen
+    int count = 0;
+
+    for(int i=0; str1[i]!='\0'; i++){
+        count ++;
+    }
+    printf("%d\n", count);
+
+    //stcpy
+    char str2[30];
+
+    strcpy(str2, str1);
+
+    printf("Source string: %s\n", str1);
+    printf("Copied string: %s\n", str2);
+
+    //strcat
+    char str3[] = "My name is ";
+    char str4[] = "Zayed Abdullah";
+
+    strcat(str3, str4);
+
+    printf("Concatenated string: %s\n", str3);
+
+    //without strcat
+    for(int i=0 ; str3[i]!=0; i++){
+        count ++;
+    }
+
+    for(int j=0 ; str4[j]!=0; j++){
+        str3[count+j] = str4[j];
+    }
+
+    printf("Concatenated String: %s\n", str3);
+
+    //strcmp
+    char str5[]= "anisul islam";
+    char str6[]= "anisul";
+
+    int d = strcmp(str5, str6);
+    if(d == 0){
+        printf("Equal\n");
+    }
+    else{
+        printf("Not Equal\n");
+    }
+
+    //strrev
+    char str7[30] = "ghorardim";
+    char str8[30];
+    int len = 0;
+    int j;
+    int i;
+
+    for(i=0; str7[i]!=0; i++){
+        len++;
+    }
+    for(j=0,i=len-1; i>=0; i--,j++){
+        str8[j] = str7[i];
+    }
+    str8[j] = '\0';
+
+    printf("str8 : %s\n", str8);
+
+    //strupr, strlwr
+    printf("%s\n%s", strupr(str1), strlwr(str1));
+
+return 0;
+}
