@@ -1,48 +1,54 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int n, element, position;
+int main(){
 
-    // Ask user for the number of elements
-    printf("Enter the number of elements in the array: ");
+    int n;
+    printf("Enter the number of elements:");
     scanf("%d", &n);
 
-    int arr[n+1];  // Allocate extra space for the new element
+    int arr[n+1];
 
-    // Read the original array elements
-    printf("Enter %d elements: ", n);
-    for (int i = 0; i < n; i++) {
+    int i;
+    for(i=0; i<n; i++){
+        printf("Element %d: ", i);
         scanf("%d", &arr[i]);
     }
 
-    // Get the element to insert and the position (1-indexed)
-    printf("Enter the element to insert: ");
-    scanf("%d", &element);
-    printf("Enter the position to insert (1 to %d): ", n+1);
-    scanf("%d", &position);
-
-    // Validate the position
-    if (position < 1 || position > n+1) {
-        printf("Invalid position!\n");
-        return 1;
-    }
-
-    // Shift elements to the right to make space for the new element
-    // Start from the end of the current array and move elements one position to the right
-    for (int i = n; i >= position; i--) {
-        arr[i] = arr[i - 1];
-    }
-
-    // Insert the new element at the desired position
-    arr[position - 1] = element;
-    n++;  // Increase the array size
-
-    // Print the updated array
-    printf("Updated array: ");
-    for (int i = 0; i < n; i++) {
+    //array
+    printf("The Array\n");
+    for(i=0; i<n; i++){
         printf("%d ", arr[i]);
     }
     printf("\n");
 
-    return 0;
+    int insert;
+    int location;
+
+    printf("Enter Insert Value:");
+    scanf("%d", &insert);
+    printf("Enter insert location:");
+    scanf("%d", &location);
+
+    if(location<0 || location>n){
+        printf("Invalid location");
+        return 1;
+    }
+
+    //shift end to location
+    for(i=n; i>=location; i--){
+        arr[i] = arr[i-1];
+    }
+
+    //insert value
+    arr[location] = insert;
+    n++;
+
+    printf("Updated Array:\n");
+    for(i=0; i<n; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+
+return 0;
 }
