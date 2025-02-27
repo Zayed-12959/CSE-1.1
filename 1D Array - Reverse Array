@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+int main(){
+
+    int n;
+    printf("Enter the element number:");
+    scanf("%d", &n);
+
+    int arr1[n];
+    int i,j;
+
+    for(i=0; i<n; i++){
+        printf("Element %d:", i);
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Forward Array:\n");
+    for(i=0; i<n; i++){
+        printf("%d", arr1[i]);
+    }
+    printf("\n");
+
+    int arr2[n];
+
+    for(i=0,j=n-1; i<n && j>=0; i++,j--){
+        arr2[j] = arr1[i];
+    }
+
+    printf("Revered array:\n");
+    for(j=0; j<n; j++){
+        printf("%d", arr2[j]);
+    }
+
+return 0;
+}
