@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(){
+    char str[1000], ch;
+    int found = 0;
+
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    // Clear the input buffer
+    while (getchar() != '\n');
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(int i=0; str[i]!='\0'; i++){
+        if(ch==str[i]){
+            found++;
+        }
+    }
+
+    printf("Occurences: %d", found);
+
+    return 0;
+}
+
