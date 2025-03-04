@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char strings[5][100];  // Array to store 5 strings
+
+    // Input 5 strings
+    printf("Enter 5 strings:\n");
+    for (int i = 0; i < 5; i++) {
+        fgets(strings[i], sizeof(strings[i]), stdin);
+        strings[i][strcspn(strings[i], "\n")] = '\0';  // Remove newline
+    }
+
+    // Display strings with their lengths
+    printf("\nStrings and their lengths:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("String %d: %s (Length: %zu)\n", i + 1, strings[i], strlen(strings[i]));
+    }
+
+    return 0;
+}
