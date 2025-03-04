@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+void extractSubstring(char str[], int start, int length) {
+    char extracted[100];
+    
+    // Check if start and length are within valid range
+    if (start < 0 || start >= strlen(str) || length <= 0) {
+        printf("Invalid start position or length.\n");
+        return;
+    }
+
+    // Extract substring
+    int i;
+    for (i = 0; i < length && str[start + i] != '\0'; i++) {
+        extracted[i] = str[start + i];
+    }
+    extracted[i] = '\0';  // Null terminate the extracted substring
+
+    printf("Extracted substring: %s\n", extracted);
+}
+
+int main() {
+    char str[100];
+    int start, length;
+
+    // Input the string
+    printf("Enter the string: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0'; // Remove newline
+
+    // Input the starting position and length of characters to extract
+    printf("Enter the start position (0-indexed): ");
+    scanf("%d", &start);
+    printf("Enter the number of characters to extract: ");
+    scanf("%d", &length);
+
+    // Call function to extract substring
+    extractSubstring(str, start, length);
+
+    return 0;
+}
