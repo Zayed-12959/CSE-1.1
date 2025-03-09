@@ -1,24 +1,21 @@
 #include<stdio.h>
 
-int countdigits(int n){
-    if(n==0){
-        return 0;
+    int digitofnumber(int num){
+        if(num==0){
+            return 0;
+        }
+    return 1 + digitofnumber(num/10);
     }
-    return 1 + countdigits(n/10);
-}
 
 int main(){
 
     int num;
-    printf("Enter a number:");
+
+    printf("Enter number:");
     scanf("%d", &num);
 
-    if(num==0){
-        printf("number of digits:1\n");
-    }
-    else{
-        printf("number of digits:%d", countdigits(num));
-    }
+    printf("%d", digitofnumber(num));
 
 return 0;
 }
+
