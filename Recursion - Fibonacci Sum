@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+// Recursive function to compute Fibonacci numbers
+int fibonacci(int n) {
+    if (n == 0) return 0;  // Base case: F(0) = 0
+    if (n == 1) return 1;  // Base case: F(1) = 1
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Recursive function to compute the sum of first n Fibonacci terms
+int sumFibonacci(int n) {
+    if (n == 0) return 0;  // Base case: sum of first 0 terms is 0
+    return fibonacci(n - 1) + sumFibonacci(n - 1);
+}
+
+int main() {
+    int n;
+
+    // Taking input from the user
+    printf("Enter the number of Fibonacci terms: ");
+    scanf("%d", &n);
+
+    // Print the sum of first n Fibonacci terms
+    printf("Sum of first %d Fibonacci terms: %d\n", n, sumFibonacci(n));
+
+    return 0;
+}
