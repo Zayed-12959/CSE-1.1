@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+
+    int i, j, k;
+    char ch, ch1;
+    char str[1000];
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    printf("Character to be replaced:");
+    scanf(" %c", &ch1);
+
+    printf("Enter replacing character:");
+    scanf(" %c", &ch);
+
+    if(str[strlen(str)-1] == '\n'){
+        str[strlen(str)-1] = '\0';
+    }
+
+    for(i=0; str[i]!='\0'; i++){
+        if(str[i]==ch1){
+            str[i] = ch;
+            break;
+        }
+    }
+
+    printf("Modified String: %s\n", str);
+
+    return 0;
+}
