@@ -5,7 +5,7 @@ int main(){
     char str[1000];
     int i,j;
     int maxfreq = 0;
-    int maxchar;
+    char maxchar;
 
     printf("Enter a string:");
     fgets(str, sizeof(str), stdin);
