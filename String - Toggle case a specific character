@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main() {
+
+    char ch;
+    char str[1000];
+
+    printf("Enter a string:");
+    fgets(str, sizeof(str), stdin);
+
+    printf("Enter a character:");
+    scanf(" %c", &ch);
+
+    for(int i=0; str[i]!='\0'; i++){
+        if(str[i]==ch || str[i]==toupper(ch)){
+            if(str[i]>='a' && str[i]<='z'){
+                str[i] = str[i] - ('a' - 'A');
+            }
+            else if(str[i]>='A' && str[i]<='Z'){
+                str[i] = str[i] + ('a' - 'A');
+            }
+        }
+    }
+
+
+    printf("Modified String: %s", str);
+
+
+    return 0;
+}
