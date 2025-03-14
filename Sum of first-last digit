@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main(){
+
+    int num;
+
+    printf("Enter a 5 digit number: ");
+    scanf("%d", &num);
+
+    int last = num%10;
+
+    int first;
+
+    for(first = num; first>=10; first = first/10);
+
+    int sum = first + last;
+
+    printf("Sum: %d", sum);
+    
+return 0;
+}
