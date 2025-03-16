@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+int main(){
+
+    int product = 1;
+
+    for(int i=2; i<=37; i=i+5){
+        printf("%d ", i);
+        product = product*i;
+    }
+
+    printf("\n");
+    printf("%d", product);
+
+return 0;
+}
