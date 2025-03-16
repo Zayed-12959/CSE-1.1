@@ -3,52 +3,32 @@
 int main(){
 
     int n;
-    printf("Enter the number of elements:");
+    printf("number of elements:");
     scanf("%d", &n);
 
     int arr[n+1];
 
-    int i;
-    for(i=0; i<n; i++){
-        printf("Element %d: ", i);
+    for(int i=0; i<n; i++){
+        printf("Element[%d]:", i);
         scanf("%d", &arr[i]);
     }
-
-    //array
-    printf("The Array\n");
-    for(i=0; i<n; i++){
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
 
     int insert;
     int location;
 
-    printf("Enter Insert Value:");
+    printf("Insert element:");
     scanf("%d", &insert);
-    printf("Enter insert location:");
+    printf("Insert Location:");
     scanf("%d", &location);
 
-    if(location<0 || location>n){
-        printf("Invalid location");
-        return 1;
-    }
-
-    //shift end to location
-    for(i=n; i>=location; i--){
+    for(int i=n; i>=location; i--){
         arr[i] = arr[i-1];
     }
-
-    //insert value
     arr[location] = insert;
-    n++;
 
-    printf("Updated Array:\n");
-    for(i=0; i<n; i++){
+    for(int i=0; i<n+1; i++){
         printf("%d ", arr[i]);
     }
-    printf("\n");
-
 
 return 0;
 }
