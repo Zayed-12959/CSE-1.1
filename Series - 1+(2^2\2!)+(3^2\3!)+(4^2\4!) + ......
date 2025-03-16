@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+    long long power(int base, int exp){
+    long long result = 1;
+    for(int i=1; i<=exp; i++){
+        result = result*base;
+    }
+    return result;
+    }
+
+    long long factorial(int num){
+    long long fact = 1;
+    for(int i=1; i<=num; i++){
+        fact = fact*i;
+    }
+    return fact;
+    }
+
+int main(){
+
+    int n;
+    printf("Enter n:");
+    scanf("%d", &n);
+
+    int sum = 0;
+
+    for(int i=1; i<=n; i++){
+        printf("%d/%d ", power(i,2), factorial(i));
+        sum = sum + (power(i,2)/factorial(i));
+    }
+    printf("\n");
+    printf("%d", sum);
+
+return 0;
+}
