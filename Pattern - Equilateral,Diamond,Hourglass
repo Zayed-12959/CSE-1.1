@@ -56,6 +56,39 @@ int row,col;
         printf("\n");
     }
 
+//Hollow Diamond
+int row,col;
+
+    for(row=1; row<=n; row++){
+        for(col=1; col<=n-row; col++){
+            printf(" ");
+        }
+        for(col=1; col<=row*2-1; col++){
+            if(col==1 || col==row*2-1){
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    for(row=n-1; row>=1; row--){
+        for(col=1; col<=n-row; col++){
+            printf(" ");
+        }
+        for(col=1; col<=row*2-1; col++){
+            if(col==1 || col==row*2-1){
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
 //HOURGLASS
 int row,col;
 
@@ -75,6 +108,39 @@ int row,col;
         }
         for(col=1; col<=row*2-1; col++){
             printf("*");
+        }
+        printf("\n");
+    }
+
+//Hollow Hourglass
+int row,col;
+
+    for(row=n; row>=1; row--){
+        for(col=1; col<=n-row; col++){
+            printf(" ");
+        }
+        for(col=1; col<=row*2-1; col++){
+            if(col==1 || col==row*2-1 || row==n){
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    for(row=2; row<=n; row++){
+        for(col=1; col<=n-row; col++){
+            printf(" ");
+        }
+        for(col=1; col<=row*2-1; col++){
+            if(col==1 || col==row*2-1 || row==n){
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
         }
         printf("\n");
     }
