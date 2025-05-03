@@ -1,26 +1,22 @@
-#include<stdio.h>
+void strconcat(char str1[], char str2[], char merged[]) {
+    int len1 = strlen(str1);
+    int len2 = strlen(str2);
+    int i, j;
 
-int main() {
-
-    char str[1000];
-    char str1[1000];
-    int count = 0;
-    int i,j;
-
-    printf("Enter a string:");
-    gets(str);
-
-    printf("Enter the second string:");
-    gets(str1);
-
-    for(i=0; str[i]!='\0'; i++){
-        count++;
+    // Copy str1 into merged
+    for (i = 0; i < len1; i++) {
+        merged[i] = str1[i];
     }
 
-    for(j=0; str1[j]!='\0'; j++){
-        str[count+j] = str1[j];
+    // Add a space after str1
+    merged[i++] = ' ';
+
+    // Copy str2 after the space
+    for (j = 0; j < len2; j++, i++) {
+        merged[i] = str2[j];
     }
 
-    printf("%s", str);
-    return 0;
+    // Null-terminate the merged string
+    merged[i] = '\0';
 }
+
