@@ -7,10 +7,19 @@ int main(){
 
     int *p1;
     p1 = &x;
-    int *p2 = &y;
 
     printf("Value of x : %d\n", x);
     printf("Address of x: %d\n", &x);
+    printf("Address of p1: %d\n", p1);
+    printf("Content of p1: %d\n", *p1);
+    printf("Address of p: %d\n", &p1);
+
+    printf("\n");
+
+    p1 = &y;
+
+    printf("Value of y : %d\n", y);
+    printf("Address of y: %d\n", &y);
     printf("Address of p1: %d\n", p1);
     printf("Content of p1: %d\n", *p1);
     printf("Address of p: %d\n", &p1);
